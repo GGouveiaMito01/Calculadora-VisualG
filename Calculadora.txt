@@ -1,0 +1,56 @@
+Algoritmo "Calculadora"
+
+Var
+
+   numero1, numero2, resultado: real
+   operacao: caracter
+Inicio
+
+   repita
+
+      escreva ("Digite o primeiro número: ")
+      leia(numero1)
+      escreva ("Digite o segundo número: ")
+      leia(numero2)
+
+      escreval ("1 - Soma (+)")
+      escreval ("2 - Subtração (-)")
+      escreval ("3 - Multiplicação (*)")
+      escreval ("4 - Divisão (/)")
+      escreval ("0 - Sair")
+      leia(operacao)
+
+      escolha operacao
+
+      caso "1"
+         resultado <- numero1 + numero2
+         escreval ("O resultado desta operação é: ", resultado)
+         escreval ("******************************************************")
+      caso "2"
+         resultado <- numero1 - numero2
+         escreval ("O resultado desta operação é: ", resultado)
+         escreval ("******************************************************")
+      caso "3"
+         resultado <- numero1 * numero2
+         escreval ("O resultado desta operação é: ", resultado)
+         escreval ("******************************************************")
+      caso "4"
+         se numero2 = 0 entao
+            escreval("Não é possível dividir por zero.")
+            escreval ("******************************************************")
+         senao
+            resultado <- numero1 / numero2
+            escreval ("O resultado desta operação é: ", resultado)
+            escreval ("******************************************************")
+         fimse
+      caso "0"
+         escreval ("Calculadora encerrada.")
+      outrocaso
+         escreval ("Essa opção não existe, escolha novamente.")
+         escreval ("******************************************************")
+
+      fimescolha
+
+   ate operacao = "0"
+
+Fimalgoritmo
