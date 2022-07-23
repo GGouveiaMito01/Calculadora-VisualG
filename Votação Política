@@ -1,0 +1,71 @@
+
+Algoritmo "Votação"
+
+Var
+
+   NumeroCandidato, candidatoX, candidatoY, candidatoZ: inteiro
+   NumeroEleitor, votosinvalidos, SomaTotalVotos: inteiro
+   votar: caracter
+Inicio
+
+   NumeroEleitor <- 1
+
+   repita
+
+      escreval("Urna Eletrônica")
+      escreval()
+      escreval("Número Eleitores:", NumeroEleitor)
+      escreval()
+      escreval("Lista de Candidatos:")
+      escreval()
+      escreval ("Candidato_X => 889")
+      escreval ("Candidato_Y => 847")
+      escreval ("Candidato_Z => 515")
+      escreval ("Branco => 0")
+      escreval ("Escolha o número do candidato.")
+      leia(NumeroCandidato)
+
+      escolha NumeroCandidato
+
+      caso 889
+         candidatoX <- candidatoX + 1
+      caso 847
+         candidatoY <- candidatoY + 1
+      caso 515
+         candidatoZ <- candidatoZ + 1
+      outrocaso
+         escreval("Voto em Branco ou digitado incorretamente.")
+         votosinvalidos <- votosinvalidos + 1
+      fimescolha
+
+      escreval("Novo voto - S ou N ?")
+      leia(votar)
+      se (votar <> "N") e (votar <> "n") entao
+         NumeroEleitor <- NumeroEleitor + 1
+      fimse
+      limpatela
+   ate ((votar = "N") ou (votar = "n"))
+
+   SomaTotalVotos <- candidatoX + candidatoY + candidatoZ + votosinvalidos
+
+   escreval("Apuração doa votação.")
+   escreval("Candidato_X => 889:", candidatoX," voto/s.")
+   escreval("Candidato_Y => 847:", candidatoY," voto/s.")
+   escreval("Candidato_Z => 515:", candidatoZ," voto/s.")
+   escreval("Votos Nulos:", votosinvalidos," voto/s.")
+   escreval("Número de Eleitores:", NumeroEleitor)
+   escreval("Soma Total de Votos:", SomaTotalVotos)
+
+   se (candidatoX > candidatoY) e (candidatoX > candidatoZ) entao
+      escreval("O CandidatoX foi o vencedor com" , candidatoX, " votos")
+   senao
+      se (candidatoY > candidatoX) e (candidatoY > candidatoZ) entao
+         escreval("O CandidatoY foi o vencedor com" , candidatoY, " votos")
+      senao
+         se (candidatoZ > candidatoX) e (candidatoZ > candidatoY) entao
+            escreval("O CandidatoZ foi o vencedor com" , candidatoZ, " votos")
+         fimse
+      fimse
+   fimse
+
+Fimalgoritmo
